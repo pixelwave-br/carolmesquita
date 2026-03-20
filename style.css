@@ -1,13 +1,14 @@
 :root {
-  --bg: #fff6f8;
-  --rose: #d24b7f;
-  --rose-2: #ffd2df;
-  --nude: #fce2cb;
+  --bg: #fff4f7;
+  --rose: #d41f6f;
+  --rose-2: #ffccde;
+  --rose-dark: #bc0c51;
+  --nude: #fde1c8;
   --white: #ffffff;
-  --gold: #e1af60;
-  --text-dark: #2c1c1f;
+  --gold: #e1b35c;
+  --text-dark: #28141a;
   --whatsapp-green: #1ebf5f;
-  --shadow-soft: 0 12px 30px rgba(63, 43, 47, 0.12);
+  --shadow-soft: 0 16px 30px rgba(40, 22, 27, 0.15);
 }
 
 * {
@@ -41,8 +42,8 @@ section {
 }
 
 .hero {
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), transparent),
-    linear-gradient(120deg, rgba(233, 190, 225, 0.9), rgba(244, 216, 199, 0.9));
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.95), transparent),
+    linear-gradient(130deg, rgba(212, 31, 111, 0.95), rgba(241, 168, 132, 0.85));
   border-radius: 40px;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -80,7 +81,7 @@ section {
   text-transform: uppercase;
   font-size: 0.85rem;
   margin-bottom: 0.6rem;
-  color: var(--rose);
+  color: var(--rose-dark);
 }
 
 .hero__title {
@@ -125,17 +126,27 @@ section {
 }
 
 .whatsapp-button--outline {
-  background: transparent;
-  color: var(--whatsapp-green);
-  border: 2px solid rgba(37, 211, 102, 0.8);
-  padding: 0.85rem 1.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--whatsapp-green);
+  color: #fff;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-section {
-  background: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 212, 226, 0.8));
   border-radius: 32px;
   box-shadow: var(--shadow-soft);
   padding-bottom: 2.5rem;
+  border: 1px solid rgba(212, 31, 111, 0.2);
 }
 
 .section-header {
@@ -161,7 +172,9 @@ section {
   display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 18px 30px rgba(212, 31, 111, 0.18);
 }
 
 .gallery-grid img:hover {
@@ -180,6 +193,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  backdrop-filter: blur(4px);
   z-index: 20;
 }
 
@@ -238,10 +252,11 @@ section {
 
 .mid-cta {
   text-align: center;
-  background: var(--rose-2);
+  background: linear-gradient(120deg, rgba(212, 31, 111, 0.9), rgba(255, 212, 226, 0.95));
   border-radius: 32px;
   margin: 2rem 0;
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .mid-cta p {
@@ -251,9 +266,10 @@ section {
 }
 
 .services {
-  background: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(254, 226, 202, 0.9));
   border-radius: 32px;
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(212, 31, 111, 0.12);
 }
 
 .services-grid {
@@ -265,14 +281,15 @@ section {
 .service-card {
   padding: 1.8rem;
   border-radius: 24px;
-  background: rgba(234, 214, 196, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  transition: transform 0.4s ease;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(212, 31, 111, 0.1);
+  box-shadow: 0 10px 24px rgba(212, 31, 111, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(212, 31, 111, 0.2);
 }
 
 .service-card h3 {
@@ -291,11 +308,12 @@ section {
 }
 
 .testimonial {
-  background: var(--rose-2);
+  background: rgba(255, 220, 229, 0.9);
   border-radius: 24px;
   padding: 1.8rem;
   box-shadow: var(--shadow-soft);
   min-height: 180px;
+  border: 1px solid rgba(212, 31, 111, 0.1);
 }
 
 .testimonial p {
@@ -310,7 +328,7 @@ section {
 }
 
 .final-cta {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 210, 190, 0.6));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(232, 171, 128, 0.85));
   border-radius: 40px;
   box-shadow: var(--shadow-soft);
   padding: 3rem;
