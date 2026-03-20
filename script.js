@@ -23,6 +23,25 @@ const modalImage = document.getElementById("gallery-modal-img");
 const modalClose = document.querySelector(".gallery-modal__close");
 const modalNavButtons = document.querySelectorAll(".gallery-modal__arrow");
 let currentIndex = 0;
+let scrollPosition = 0;
+
+const lockBodyScroll = () => {
+  scrollPosition = window.scrollY;
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+};
+
+const unlockBodyScroll = () => {
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo(0, scrollPosition);
+};
 
 if (modal && modalImage && galleryImages.length) {
   const images = Array.from(galleryImages);
@@ -36,13 +55,16 @@ if (modal && modalImage && galleryImages.length) {
 
   const openModal = (index) => {
     setImage(index);
+    lockBodyScroll();
     modal.classList.add("active");
     modal.removeAttribute("aria-hidden");
+    modal.scrollIntoView({ block: "center" });
   };
 
   const closeModal = () => {
     modal.classList.remove("active");
     modal.setAttribute("aria-hidden", "true");
+    unlockBodyScroll();
   };
 
   images.forEach((img, index) => {
