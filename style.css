@@ -1,12 +1,12 @@
 :root {
-  --bg: #fdf7f6;
-  --rose: #c9759e;
-  --rose-2: #f9d8e4;
-  --nude: #f4d8c7;
+  --bg: #fff6f8;
+  --rose: #d24b7f;
+  --rose-2: #ffd2df;
+  --nude: #fce2cb;
   --white: #ffffff;
-  --gold: #d0a96a;
-  --text-dark: #3f2b2f;
-  --whatsapp-green: #25d366;
+  --gold: #e1af60;
+  --text-dark: #2c1c1f;
+  --whatsapp-green: #1ebf5f;
   --shadow-soft: 0 12px 30px rgba(63, 43, 47, 0.12);
 }
 
@@ -383,5 +383,59 @@ section {
 
   .final-cta {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1.25rem 0.75rem 2rem;
+  }
+
+  main {
+    gap: 1.25rem;
+  }
+
+  section {
+    padding: 2.3rem 1rem;
+    border-radius: 28px;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem;
+    border-radius: 32px;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .gallery-grid,
+  .services-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .gallery-grid img {
+    border-radius: 18px;
+  }
+
+  .final-cta {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .final-cta__actions {
+    flex-direction: column;
+  }
+
+  .mid-cta,
+  .gallery-section,
+  .services {
+    padding: 2rem 1rem;
+  }
+
+  .whatsapp-button,
+  .instagram-button {
+    width: 100%;
+    justify-content: center;
   }
 }
