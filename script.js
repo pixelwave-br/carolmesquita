@@ -1,20 +1,6 @@
-// Adiciona animação suave de fade-in quando os elementos aparecem na tela.
+// Adiciona animação suave de fade-in logo na abertura, sem depender do scroll.
 const revealElements = document.querySelectorAll(".reveal");
-
-const observerOptions = {
-  threshold: 0.2,
-};
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-revealElements.forEach((element) => revealObserver.observe(element));
+revealElements.forEach((element) => element.classList.add("active"));
 
 // Galeria com visualização em modal
 const galleryImages = document.querySelectorAll(".gallery-grid img");
